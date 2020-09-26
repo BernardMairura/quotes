@@ -9,6 +9,9 @@ import {Quote}from 'src/app/quote'
 export class QuoteDetailComponent implements OnInit {
 
   @Input() quote: Quote;
+
+
+  
   constructor() { }
 
   ngOnInit(): void {
