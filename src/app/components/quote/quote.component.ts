@@ -8,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [ 
-    {id:1,quote:'We never know the love of a parent till we become parents ourselves',author:'Henry Ward Beecher'},
-  {id:2,quote:'The best inheritance a parent can give his children is a few minutes of his time each day.',author:'O. A. Battista'},
-  {id:3,quote:'There is no such thing as a perfect parent. So just be a real one.',author:'SUE ATKINS'},
-];
+    new Quote(1,'We never know the love of a parent till we become parents ourselves','Henry Ward Beecher','Bernard')
+  ];
+
+   /* new Quote(1,'We never know the love of a parent till we become parents ourselves','Henry Ward Beecher',new Date(2020,3,14)),
+    new Quote(2,'The best inheritance a parent can give his children is a few minutes of his time each day.','O. A. Battista',new Date(2020,3,14)),
+    new Quote(3,'There is no such thing as a perfect parent. So just be a real one.','SUE ATKINS',new Date(2020,3,14)),
+];*/
+toggleDetails(index: string | number){
+  this.quotes[index].showName = !this.quotes[index].showName;
+}
+
+completeQuote(isComplete, index){
+  if (isComplete) {
+    this.quotes.splice(index,1);
+  }
+}
+
 
 
   constructor() { }
