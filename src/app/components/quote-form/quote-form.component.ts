@@ -30,7 +30,7 @@ export class QuoteFormComponent implements OnInit {
   Words:any
 
   submitQuote(){
-    this.Words = new Quote(this.qEditor,this.qAuthor,this.qQuote)
+    this.Words = new Quote(this.Words,this.qAuthor,this.qEditor)
     this.qQuote=''
     this.qAuthor=''
     this.qEditor=''

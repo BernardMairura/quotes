@@ -42,12 +42,6 @@ highestUpvote(){
 }
 
 
-/*
-completeQuote(isComplete: any, index: number){
-  if (isComplete) {
-    this.quotes.splice(index,1);
-  }*/
-
 
 
   constructor() { }
