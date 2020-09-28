@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [ 
-    new Quote('We never know the love of a parent till we become parents ourselves','Henry Ward Beecher','Bernard',),
-    new Quote('The best inheritance a parent can give his children is a few minutes of his time each day.','O. A. Battista','Bernard', ),
-    new Quote('There is no such thing as a perfect parent. So just be a real one.','SUE ATKINS','Bernard'),
+    new Quote('I know that there are millions of Americans who are content with their health care coverage - they like their plan and, most importantly, they value their relationship with their doctor.','Barack Obama','Bernard',),
+    new Quote('The doctor should be opaque to his patients and, like a mirror, should show them nothing but what is shown to him..','Sigmund Freud','Bernard', ),
+    new Quote('A wise doctor does not mutter incantations over a sore that needs the knife.','Sophocles','Bernard'),
 ];
 
 addQuote(chosenQuote) {
