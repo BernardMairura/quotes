@@ -9,11 +9,10 @@ import {Quote}from 'src/app/quote'
 export class QuoteDetailComponent implements OnInit {
 
   @Input() quote: Quote;
-  @Output() isComplete = new EventEmitter<boolean>();
 
-  quoteComplete(complete:boolean){
-    this.isComplete.emit(complete);
-  }
+  upVote=0;
+  downVote=0;
+  
   constructor() { }
 
   ngOnInit(): void {

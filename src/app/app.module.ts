@@ -9,6 +9,7 @@ import { QuoteDetailComponent } from './components/quote-detail/quote-detail.com
 import { QuoteFormComponent } from './components/quote-form/quote-form.component';
 import { HighlightDirective } from './highlight.directive';
 import { DateCountPipe } from './date-count.pipe';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DateCountPipe } from './date-count.pipe';
     DateCountPipe
   ],
   imports: [
+    MDBBootstrapModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FormsModule

@@ -1,7 +1,14 @@
 export class Quote {
-    showName: boolean;
-  constructor(public id: number,public quote: string,public author: string,public name:string, public completeDate: Date,){
-    this.showName=false;
+    public upVote:number;
+    public downVote:number;
+    public completeDate: Date
+
+  constructor(public quote: string,public author: string,public editor:string)
+  {  
+ 
+    this.completeDate=new Date;
+    this.upVote=0;
+    this.downVote=0;
   }
     }
   

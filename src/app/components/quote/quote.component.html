@@ -1,22 +1,90 @@
-<div class="container">
-  <h1>QUOTES</h1>
-  <hr>
 
-  <div class="row">
-    <div class="col-md-6">
-      <div *ngFor='let quote of quotes;let i = index'>
-        <div>
-          <h6 id={{i}} appHighlight>{{quote.quote}} due on {{quote.completeDate|date|uppercase}}</h6>
-          <button (click)='toggleDetails(i)' class="btn btn-primary"> Details</button>
-        </div>
-
-        <div *ngIf='quote.showName'>
-          <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
-        </div>
+<!-- Main navigation -->
+<header>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <strong>MDB</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+        aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <links>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link" href="#">Quotes</a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link" href="#">Add Quote</a>
+            </li>
+          </ul>
+          <form class="form-inline waves-light" mdbWavesEffect>
+            <div class="md-form mt-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </form>
+        </links>
+        <form class="form-inline">
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          </div>
+        </form>
       </div>
     </div>
-    <div class="col-md-6">
-      <app-quote-form></app-quote-form>
+  </nav>
+  <!-- Full Page Intro -->
+  <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
+            <h1 class="h1-responsive font-weight-bold mt-sm-5">Make purchases with our app </h1>
+            <hr class="hr-light">
+            <h6 class="mb-4">
+              <div class="myQuote " *ngFor="let quote of quotes; let i=index">
+                <p class="h3 h3-responsive font-bold wow fadeInLeft" data-wow-delay="1s" appHighlight *ngIf="highestUpvote()===quote.upvotes && quote.upvotes>0">
+                  {{quote.quote}}
+
+                </p>
+                 <p class="h3 h3-responsive font-bold wow fadeInLeft" data-wow-delay="1s" *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">
+                   {{quote.quote}}
+                 </p>
+
+                <app-quote-detail [quote]="quote"></app-quote-detail>
+                <button class="btn btn-success" (click)="upVote(i)">Upvote </button>
+                <button class="btn btn-info" (click)="downVote(i)">Downvote </button>
+                <button class="btn btn-danger" (click)="delQuote(i)">Delete</button>
+              </div>
+            </h6>
+            <a class="btn btn-white">Download</a>
+            <a class="btn btn-outline-white">Learn more</a>
+          </div>
+          <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-md-6 col-xl-5 mt-xl-5 wow fadeInRight" data-wow-delay="0.3s">
+              <!--Form details-->
+              <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                <app-quote-form (emitQuote)="addQuote($event)"></app-quote-form>
+              </div>
+              <!--Form details-->
+            <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png" alt="" class="img-fluid">
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Content -->
     </div>
+    <!-- Mask & flexbox options-->
   </div>
-</div>
+  <!-- Full Page Intro -->
+</header>
+<!-- Main navigation -->
+
