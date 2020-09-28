@@ -1,0 +1,75 @@
+
+<!-- Main navigation -->
+<header>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <strong>QOUTES</strong>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <links>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link" href="#"></a>
+            </li>
+          </ul>
+        </links>
+        
+      </div>
+    </div>
+  </nav>
+  <!-- Full Page Intro -->
+  <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/37.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
+            <h1 class="h1-responsive font-weight-bold mt-sm-5" style="color : whitesmoke;">Read and Vote the best Memorable Quotes.You can opt to delete and contribute too. </h1>
+            <hr class="hr-light">
+            <h6 class="mb-4">
+              <div class="myQuote " *ngFor="let quote of quotes; let i=index">
+                <p class="h3 h3-responsive font-bold wow fadeInLeft" data-wow-delay="1s" appHighlight *ngIf="highestUpvote()===quote.upvotes && quote.upvotes>0">
+                  {{quote.quote}}
+
+                </p>
+                 <p class="h3 h3-responsive font-bold wow fadeInLeft" data-wow-delay="1s" *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">
+                   {{quote.quote}}
+                 </p>
+
+                <app-quote-detail [quote]="quote"></app-quote-detail>
+                <button class="btn btn-success" (click)="upVote(i)">Upvote </button>
+                <button class="btn btn-info" (click)="downVote(i)">Downvote </button>
+                <button class="btn btn-danger" (click)="delQuote(i)">Delete</button>
+              </div>
+            </h6>
+          </div>
+          <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-md-6 col-xl-5 mt-xl-5 wow fadeInRight" data-wow-delay="0.3s">
+              <!--Form details-->
+              <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                <app-quote-form (emitQuote)="addQuote($event)"></app-quote-form>
+              </div>
+              <!--Form details-->
+            <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png" alt="" class="img-fluid">
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
+  </div>
+  <!-- Full Page Intro -->
+</header>
+<!-- Main navigation -->
+

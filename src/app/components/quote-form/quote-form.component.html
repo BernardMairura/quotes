@@ -1,0 +1,62 @@
+<!--<form (ngSubmit)="submitQuote()" class="card-body ">
+    <div class="form-group">
+        <h3>Add a quote</h3>
+    </div>
+    <div class="form-group">
+        <textarea name="" id="form1" cols="30" rows="10" placeholder="Qoute" [(ngModel)]="qQuote"></textarea>
+    </div>
+      <div class="form-group">
+        <label for="qoute">Author</label>
+        <input type="text" class="form-control" id="form2" placeholder="Author" [(ngModel)]="qAuthor">
+      </div>
+      <div class="form-group">
+        <label for="qoute">Your Name</label>
+        <input type="text" class="form-control" id="form3" placeholder="Name" [(ngModel)]="qEditor">
+      </div>
+      <div>
+        <button type="submit" mdbBtn color="indigo" class="waves-light btn btn-info" mdbWavesEffect>Post Quote</button>
+      </div>
+
+     
+</form> -->
+
+<form (ngSubmit)="submitQuote()" class="card-body ">
+  <!--Header-->
+  <div class="text-center">
+
+    <h3 class="white-text"> Add a Quote <mdb-icon far icon="arrow-alt-circleDownvotes:0-down"></mdb-icon>
+    </h3>
+    <hr class="hr-light">
+  </div>
+
+  <!--Body-->
+  <div class="md-form">
+    <i class="fas fa-quote-left prefix white-text"></i>
+    <label for="form2">Quotes</label>
+    <input type="text" id="form2" class="form-control" name="words" [(ngModel)]="Words" mdbInput>
+  </div>
+  <div class="md-form">
+    <i class="fas fa-user prefix white-text"></i>
+    <label for="form4">Author</label>
+    <input type="text" id="form4" class="form-control" name="author" [(ngModel)]="qAuthor" mdbInput>
+    
+  </div>
+
+  <div class="md-form">
+    <i class="fas fa-user prefix white-text"></i>
+    <label for="form3">Editor's name</label>
+    <input type="text" id="form3" class="form-control " name="editor" [(ngModel)]="qEditor" mdbInput>
+  </div>
+  
+  <div class="md-form">
+    <i class="far fa-clock prefix white-text"></i>
+    <label class=" white-text" for="form5">Completion Date</label>
+    <input type='date' id="form5" class="form-control white-text" name="completeDate" [(ngModel)]="qDate" mdbInput>
+    </div>
+    <div class="text-center">
+      <button type="submit" mdbBtn color="indigo" class="waves-light btn btn-info" mdbWavesEffect>Post Quote</button>
+      <hr class="hr-light mb-3 mt-4">
+
+    </div>
+
+</form>
