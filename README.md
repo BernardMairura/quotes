@@ -2,12 +2,12 @@
 
 # Moringa Core-Quotes
 
-#### Using Angular CLI. 10th Sept 2020
+#### Using Angular CLI. 29th Sept 2020
 
 ## Description
 
-* This project is meant to halp users appreciated and and maintain a journal of their favourite quotes.Update them frequently as they please and vote for the ones they love most by using the available and readly resources on Angular.
-* The user should be able to;
+* This project is meant to help users appreciate and and maintain a journal of their favourite quotes.Update the quotes frequently as they please, and vote for the ones they love most by using the available and readly resources on the App.
+**The user should be able to;**
 ~ Create a new quote.
 ~ Upvote or downvote a quote.
 ~ Delete a quote
@@ -15,7 +15,9 @@
 
 ## Setup/Installation Requirements
 
-* This programme has been setup on a linux environment.Below are the procedures;
+* This programme has been setup on a linux environment.
+
+**Below are the procedures;**
 + [nvm]($ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash)
 + [node.js]$ nvm install node
 + [angularCLI]$ npm install -g @angular/cli
