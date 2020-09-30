@@ -36,11 +36,11 @@
             <hr class="hr-light">
             <h6 class="mb-4">
               <div class="myQuote " *ngFor="let quote of quotes; let i=index">
-                <p class="h3 h3-responsive font-bold wow fadeInLeft" data-wow-delay="1s" appHighlight *ngIf="highestUpvote()===quote.upvotes && quote.upvotes>0">
+                <p class="h3 h3-responsive font-bold wow fadeInLeft" data-wow-delay="1s" appHighlight *ngIf="highestUpvote()===quote.upVote && quote.upVote>0">
                   {{quote.quote}}
 
                 </p>
-                 <p class="h3 h3-responsive font-bold wow fadeInLeft" data-wow-delay="1s" *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">
+                 <p class="h3 h3-responsive font-bold wow fadeInLeft" data-wow-delay="1s" *ngIf="highestUpvote()!==quote.upVote || quote.upVote===0">
                    {{quote.quote}}
                  </p>
 
