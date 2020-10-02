@@ -6,7 +6,7 @@
 
 ## Description
 
-* This project is meant to help users appreciate and and maintain a journal of their favourite quotes.Update the quotes frequently as they please, and vote for the ones they love most by using the available and readly resources on the App.
+* This project is meant to help users appreciate  and maintain a journal of their favourite quotes.Update the quotes frequently as they please, and vote for the ones they love most by using the available and readly resources on the App.
 **The user should be able to;**
 ~ Create a new quote.
 ~ Upvote or downvote a quote.
